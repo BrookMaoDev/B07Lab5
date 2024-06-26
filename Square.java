@@ -1,9 +1,7 @@
 package lab4;
 
-import lab4.Point;
-
 public class Square {
-    java.awt.Point topLeft;
+    Point topLeft;
     double sideLength;
 
     public Square(Point topLeft, double sideLength) {
@@ -17,10 +15,6 @@ public class Square {
 
     public double area() {
         return sideLength * sideLength;
-    }
-
-    public Point center() {
-        return Point(topLeft.x + sideLength / 2, topLeft.y + sideLength / 2);
     }
 
     @Override
@@ -42,8 +36,8 @@ public class Square {
             return false;
         }
 
-        Point other = (Point) o;
+        Square other = (Square) o;
 
-        return topLeft.equals(other.topLeft) && sideLength == other.sideLength;
+        return (topLeft.equals(other.topLeft) && sideLength == other.sideLength);
     }
 }
