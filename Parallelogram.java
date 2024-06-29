@@ -12,11 +12,11 @@ public class Parallelogram{
     }
 
     public double area(){
-        return (upperLeft.y - bottomRight.y) * length;
+        return Math.abs((upperLeft.y - bottomRight.y) * length);
     }
     
     public double perimeter(){
-        double otherLength = Math.sqrt(Math.pow(length - bottomRight.x, 2) + Math.pow(upperLeft.y - bottomRight.y, 2));
+        double otherLength = Math.sqrt(Math.pow(length - (upperLeft.x - bottomRight.x), 2) + Math.pow(upperLeft.y - bottomRight.y, 2));
         return 2 * length + 2 * otherLength;
     }
     
@@ -30,7 +30,7 @@ public class Parallelogram{
 
     @Override
     public int hashCode(){
-        return 3 * upperLeft.hashCode() + 5 * bottomRight.hashCode() + 7 * length;
+        return 3 * upperLeft.hashCode() + 5 * bottomRight.hashCode() + 7 * (int) length;
     }
 
     @Override
