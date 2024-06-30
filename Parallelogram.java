@@ -1,5 +1,7 @@
 package lab4;
 
+import java.awt.Point;
+
 public class Parallelogram{
 
     Point upperLeft, bottomRight;
@@ -16,11 +18,10 @@ public class Parallelogram{
     }
     
     public double perimeter(){
-        double otherLength = Math.sqrt(Math.pow(length - (upperLeft.x - bottomRight.x), 2) + Math.pow(upperLeft.y - bottomRight.y, 2));
-        return 2 * length + 2 * otherLength;
+        return 2 * length + 2 * (this.getUpperRight().distance(bottomRight));
     }
     
-    public Point getUpperRight(){
+    publicPointt getUpperRight(){
         return new Point(upperLeft.x + length, upperLeft.y);
     }
     
