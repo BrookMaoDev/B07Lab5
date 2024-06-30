@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class Circle {
 
     private double  radius;
@@ -9,11 +11,11 @@ public class Circle {
     }
 
     public double computeArea() {
-        return Math.pow(this.radius, 2) * Math.pi;
+        return Math.pow(this.radius, 2) * Math.PI;
     }
 
     public double getCircumference() {
-        return 2 * Math.pi * this.radius;
+        return 2 * Math.PI * this.radius;
     }
 
     public boolean withinCircle(Point p) {
